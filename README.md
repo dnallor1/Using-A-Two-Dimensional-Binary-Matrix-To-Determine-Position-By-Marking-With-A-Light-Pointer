@@ -1,2 +1,29 @@
-# Using-A-Two-Dimensional-Binary-Matrix-To-Determine-Position-By-Marking-With-A-Light-Pointer
-This project detects positions on a 2D binary matrix using a light point (e.g., laser pointer). It processes camera input, applies perspective correction, creates a binary grid, and maps the light's position to the matrix. Features include real-time detection, customizable grids, and visualization of the mapped cell.
+# Laser Pointer Detection and Grid Extraction
+
+This project uses Python and OpenCV to detect a laser pointer in a live video feed, stabilize its position, and extract a 5x5 matrix from the surrounding area. The matrix is then visualized alongside intermediate processing steps.
+
+## Features
+- **Laser Detection**: Detects a red laser pointer using HSV color thresholds.
+- **Position Stabilization**: Ensures consistent detection by stabilizing the laser position over multiple frames.
+- **Perspective Transformation**: Extracts a 5x5 grid of cells centered on the laser position.
+- **Visualization**: Displays the original frame, binary image, warped perspective, and extracted matrix.
+
+## Demonstration
+Watch the project in action on YouTube:
+- [Demo Video 1](https://www.youtube.com/watch?v=0okNEhtQrsg)
+- [Demo Video 2](https://www.youtube.com/watch?v=8X0mB1yMntU)
+
+## How It Works
+1. **Laser Detection**: The program detects the laser pointer by applying an HSV mask and calculating the centroid of the detected region.
+2. **Perspective Transform**: A perspective transformation is applied to the region around the laser to extract a 5x5 grid.
+3. **Matrix Extraction**: The transformed area is downsampled into a 5x5 binary matrix.
+4. **Visualization**: Results are displayed using Matplotlib.
+
+## Requirements
+- Python
+- OpenCV
+- NumPy
+- Matplotlib
+
+## License
+This project is licensed under the MIT License.
